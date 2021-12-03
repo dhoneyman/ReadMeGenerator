@@ -1,5 +1,3 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
     if(license === ''){
         return;
@@ -11,16 +9,10 @@ function renderLicenseBadge(license) {
         return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
     } else if(license === 'Boost Software License 1.0'){
         return `[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)`
+    } else {
+        return ''
     }
 }
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
 function contribution(input) {
     if(input === undefined) {
@@ -30,7 +22,6 @@ function contribution(input) {
     }
 }
 
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.projectTitle}
   
@@ -59,29 +50,30 @@ ${data.installation}
  * ${data.usage}
   
   ![${data.altText}](${data.photoPath})
-
+  ![${data.altText2}](${data.photoPath2})
+  
 ## License
-  
--${data.license}
--${renderLicenseBadge(data.license)}
-  
-## Credits
+    
+ -${data.license}
+ -${renderLicenseBadge(data.license)}
 
-## Collaborators
-
-- [${data.collaborator}](${data.collabGitHub})
+## Contributing
+  
+ * ${contribution(data.contribution)}
 
 ## Tests
 
  * ${data.test}
 
-## Contributing
-
- * ${contribution(data.contribution)}
-
 ## Questions
 
  * For questions regarding this software, please reach out to me on [GitHub](${data.github})
+
+## Collaborators
+
+- [${data.collaborator}](${data.collabGitHub})
+- [${data.collaborator2}](${data.collabGitHub2})
+
 `;
 }
 

@@ -1,11 +1,7 @@
-// TODO: Include packages needed for this application
 
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require('./generateMarkdown');
-// const generateMarkdown = require("generateMarkdown")
-
-// TODO: Create an array of questions for user input
 const questions = inquirer
   .prompt([
     {
@@ -45,10 +41,16 @@ const questions = inquirer
       name: "usage",
     },
     {
+      type: "confirm",
+      message: "Would you like to license your software?",
+      name: "licenseConfirm",
+    },
+    {
       type: "list",
       message: "What type of license would you like to attach to this project?",
       choices: ['Public Domain Dedication and License (PDDL)', 'MIT License' , 'Apache 2.0 License' , 'Boost Software License 1.0'],
       name: "license",
+      when: data => data.licenseConfirm === true
     },
     {
       type: "input",
@@ -87,6 +89,25 @@ const questions = inquirer
     },
     {
       type: "confirm",
+      message: "Do you have another screen shot of the project to provide?",
+      name: "photo2",
+      default: false,
+      when: data => data.photo === true
+    },
+    {
+      type: "input",
+      message: "Please provide the photo alt text.",
+      name: "altText2",
+      when: (data) => data.photo2 === true,
+    },
+    {
+      type: "input",
+      message: "Please provide the path for the photo.",
+      name: "photoPath2",
+      when: (data) => data.photo2 === true,
+    },
+    {
+      type: "confirm",
       message: "Did you have any collaborators on this project?",
       name: 'collaboratorConfirmation',
       default: false
@@ -102,6 +123,25 @@ const questions = inquirer
       message: "Please input the link to your collaborators GitHub profile here.",
       name: 'collabGitHub',
       when: (data) => data.collaboratorConfirmation === true,
+    },
+    {
+      type: "confirm",
+      message: "Did you have another collaborator on this project?",
+      name: 'collaboratorConfirmation2',
+      default: false,
+      when: (data) => data.collaboratorConfirmation === true
+    },
+    {
+      type: "input",
+      message: "Please input your collaborators name here.",
+      name: 'collaborator2',
+      when: (data) => data.collaboratorConfirmation2 === true,
+    },
+    {
+      type: "input",
+      message: "Please input the link to your collaborators GitHub profile here.",
+      name: 'collabGitHub2',
+      when: (data) => data.collaboratorConfirmation2 === true,
     },
     {
       type: "input",
@@ -132,11 +172,5 @@ function writeToFile(data) {
     err ? console.error(err) : console.log("Success!")
   );
 }
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
 
 

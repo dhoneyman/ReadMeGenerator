@@ -1,11 +1,11 @@
-# t
+# Read me generator
   
 ## Description
   
-  * Motivations - t.
-  * Reason for building - t.
-  * Problem solved - t.
-  * Lessons learned - t
+  * Motivations - building the best there ever was.
+  * Reason for building - a lot.
+  * Problem solved - I now have a read me generator.
+  * Lessons learned - too many to list
   
 ## Table of Contents
   
@@ -18,33 +18,34 @@
 
 ## Installation
 
-t
+none needed
 
 ## Usage
 
- * t
+ * no thank you
   
-  ![undefined](undefined)
-
+  ![screen shot1](./assets/images/ss1.png)
+  ![screen shot 2](./assets/images/ss2.png)
+  
 ## License
-  
--Public Domain Dedication and License (PDDL)
--[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)
-  
-## Credits
+    
+ -Boost Software License 1.0
+ -[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 
-## Collaborators
-
-- [dylan](https://github.com/dhoneyman)
+## Contributing
+  
+ * Please visit the [Contributor Covenant](https://www.contributor-covenant.org/) to view our contributors guidelines.
 
 ## Tests
 
- * t
-
-## Contributing
-
- * we dont want contribution
+ * none needed
 
 ## Questions
 
  * For questions regarding this software, please reach out to me on [GitHub](https://github.com/dhoneyman)
+
+## Collaborators
+
+- [Dylan](https://github.com/dhoneyman)
+- [undefined](undefined)
+
