@@ -22,6 +22,14 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
+function contribution(input) {
+    if(input !== null) {
+        return data.contribution;
+    } else {
+        return 'Please visit the [Contributor Covenant](https://www.contributor-covenant.org/) to view our contributors guidelines.'
+    }
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.projectTitle}
@@ -48,10 +56,15 @@ ${data.installation}
 
 ## Usage
 
-  ** ${data.usage}
+** ${data.usage}
+  
+  ``md
+  ![${data.altText}](${data.photoPath})
 
-``md
-![${data.altText}](${data.photoPath})
+##License
+  
+-${data.license}
+-${renderLicenseBadge(data.license)}
   
 ## Credits
 
@@ -59,10 +72,13 @@ ${data.installation}
 
 - [${collaborator}](${collabGitHub})
 
-##License
+##Tests
 
--${data.license}
--${renderLicenseBadge(data.license)}
+  *${data.test}
+
+##Contributing
+
+ * ${contribution(data.contribution)}
 `;
 }
 

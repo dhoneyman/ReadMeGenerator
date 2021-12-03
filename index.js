@@ -2,6 +2,7 @@
 
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateMarkdown = require("generateMarkdown")
 
 // TODO: Create an array of questions for user input
 const questions = inquirer
@@ -49,6 +50,23 @@ const questions = inquirer
       name: "license",
     },
     {
+      type: "input",
+      message: "Please input any instructions for testing here.",
+      name: "test",
+    },
+    {
+      type: "list",
+      message: "Would you like to adopt contributor guidelines from the Contributors Covenant or adopt your own?",
+      name: "contributorCovenant",
+      choices: ['Adopt Contributors Covenant guidelines','Provide contribution guidelines']
+    },
+    {
+      type: "input",
+      message: "Please provide any contribution guidelines here",
+      name: "contribution",
+      when: data => data.contributorCovenant === 'Provide contribution guidelines'
+    },
+    {
       type: "confirm",
       message: "Do you have a screen shot of the project to provide?",
       name: "photo",
@@ -68,25 +86,25 @@ const questions = inquirer
     },
     
     
-
-  ])
-  .then((data) => {
-      inquirer.prompt([ {
-        type: "confirm",
-        message: "Do you have another screen shot of the project to provide?",
-        name: "additionalPhoto",
-      },
-      {
-        type: "input",
-        message: "Do you have another screen shot of the project to provide?",
-        name: "additionalPhoto",
-      },])
-    writeToFile(fileName, data);
+    
+])
+.then((data) => {
+    writeToFile(data);
+    // inquirer.prompt([ {
+    //   type: "confirm",
+    //   message: "Do you have another screen shot of the project to provide?",
+    //   name: "additionalPhoto",
+    // },
+    // {
+    //   type: "input",
+    //   message: "Do you have another screen shot of the project to provide?",
+    //   name: "additionalPhoto",
+    // },])
   });
 // TODO: Create a function to write README file
 
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, generateMarkdown(data), (err) =>
+function writeToFile(data) {
+  fs.writeFile('README.md', generateMarkdown(data), (err) =>
     err ? console.error(err) : console.log("Success!")
   );
 }
