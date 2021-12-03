@@ -2,7 +2,8 @@
 
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateMarkdown = require("generateMarkdown")
+const generateMarkdown = require('./generateMarkdown');
+// const generateMarkdown = require("generateMarkdown")
 
 // TODO: Create an array of questions for user input
 const questions = inquirer
@@ -84,6 +85,11 @@ const questions = inquirer
       name: "photoPath",
       when: (data) => data.photo === true,
     },
+    {
+      type: "input",
+      message: "Please provide the url to your GitHub profile page.",
+      name: "github",
+    },
     
     
     
@@ -114,3 +120,5 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+

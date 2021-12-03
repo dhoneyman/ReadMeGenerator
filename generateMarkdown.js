@@ -23,10 +23,11 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 function contribution(input) {
-    if(input !== null) {
-        return data.contribution;
+    console.log(input);
+    if(input === undefined) {
+        return 'Please visit the [Contributor Covenant](https://www.contributor-covenant.org/) to view our contributors guidelines.';
     } else {
-        return 'Please visit the [Contributor Covenant](https://www.contributor-covenant.org/) to view our contributors guidelines.'
+        return input;
     }
 }
 
@@ -38,17 +39,17 @@ function generateMarkdown(data) {
   
   * Motivations - ${data.motivations}.
   * Reason for building - ${data.whyBuilt}.
-  * Problem solved - ${data.roblem}.
+  * Problem solved - ${data.problem}.
   * Lessons learned - ${data.lessons}
   
 ## Table of Contents
   
--Installation (#installation)
--Usage (#usage)
--License (#license)
--Contributing 
--Tests
--Questions
+ - Installation (#installation)
+ - Usage (#usage)
+ - License (#license)
+ - Contributing (#Contributing)
+ - Tests (#tests)
+ - Questions (#questions)
 
 ## Installation
 
@@ -58,7 +59,6 @@ ${data.installation}
 
 ** ${data.usage}
   
-  ``md
   ![${data.altText}](${data.photoPath})
 
 ##License
@@ -68,17 +68,21 @@ ${data.installation}
   
 ## Credits
 
-#Collaborators
+##Collaborators
 
-- [${collaborator}](${collabGitHub})
+- [${data.collaborator}](${data.collabGitHub})
 
 ##Tests
 
-  *${data.test}
+ * ${data.test}
 
 ##Contributing
 
  * ${contribution(data.contribution)}
+
+##Questions
+
+ * For questions regarding this software, please reach out to me on [GitHub](${data.github})
 `;
 }
 
