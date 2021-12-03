@@ -1,11 +1,11 @@
-# Read me generator
+# Read Me Generator
   
 ## Description
   
-  * Motivations - building the best there ever was.
-  * Reason for building - a lot.
-  * Problem solved - I now have a read me generator.
-  * Lessons learned - too many to list
+  * Motivations - To build a robust and helpful read me generator to steamline the process of building them in the future..
+  * Reason for building - Because I ultimately wanted to make my own life easier and learn something new.
+  * Problem solved - I now will be able to make a read me file more easily .
+  * Lessons learned - I learned a lot about communication back and forth between files and about inquirer
   
 ## Table of Contents
   
@@ -22,15 +22,15 @@ none needed
 
 ## Usage
 
- * no thank you
+ * none needed. would like to have this as a library some day though
   
-  ![screen shot1](./assets/images/ss1.png)
-  ![screen shot 2](./assets/images/ss2.png)
+  ![./assets/images/ss2.png](./assets/images/ss2.png)
+  ![undefined](undefined)
   
 ## License
     
- -Boost Software License 1.0
- -[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+ -[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+ -
 
 ## Contributing
   
@@ -46,6 +46,6 @@ none needed
 
 ## Collaborators
 
-- [Dylan](https://github.com/dhoneyman)
+- [undefined](undefined)
 - [undefined](undefined)
 
