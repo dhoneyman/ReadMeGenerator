@@ -23,7 +23,6 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 function contribution(input) {
-    console.log(input);
     if(input === undefined) {
         return 'Please visit the [Contributor Covenant](https://www.contributor-covenant.org/) to view our contributors guidelines.';
     } else {
@@ -44,12 +43,12 @@ function generateMarkdown(data) {
   
 ## Table of Contents
   
- - Installation (#installation)
- - Usage (#usage)
- - License (#license)
- - Contributing (#Contributing)
- - Tests (#tests)
- - Questions (#questions)
+ - [Installation](#installation)
+ - [Usage](#usage)
+ - [License](#license)
+ - [Contributing](#Contributing)
+ - [Tests](#tests)
+ - [Questions](#questions)
 
 ## Installation
 
@@ -57,30 +56,30 @@ ${data.installation}
 
 ## Usage
 
-** ${data.usage}
+ * ${data.usage}
   
   ![${data.altText}](${data.photoPath})
 
-##License
+## License
   
 -${data.license}
 -${renderLicenseBadge(data.license)}
   
 ## Credits
 
-##Collaborators
+## Collaborators
 
 - [${data.collaborator}](${data.collabGitHub})
 
-##Tests
+## Tests
 
  * ${data.test}
 
-##Contributing
+## Contributing
 
  * ${contribution(data.contribution)}
 
-##Questions
+## Questions
 
  * For questions regarding this software, please reach out to me on [GitHub](${data.github})
 `;

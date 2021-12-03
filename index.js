@@ -86,6 +86,24 @@ const questions = inquirer
       when: (data) => data.photo === true,
     },
     {
+      type: "confirm",
+      message: "Did you have any collaborators on this project?",
+      name: 'collaboratorConfirmation',
+      default: false
+    },
+    {
+      type: "input",
+      message: "Please input your collaborators name here.",
+      name: 'collaborator',
+      when: (data) => data.collaboratorConfirmation === true,
+    },
+    {
+      type: "input",
+      message: "Please input the link to your collaborators GitHub profile here.",
+      name: 'collabGitHub',
+      when: (data) => data.collaboratorConfirmation === true,
+    },
+    {
       type: "input",
       message: "Please provide the url to your GitHub profile page.",
       name: "github",
